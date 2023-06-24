@@ -1,0 +1,172 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1B76ADA0-583A-D698-E7C8-2132D2967599" name="Estudiante">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:25:45 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="carnet" id="BFFA323F-88CB-3926-A558-06F8A6D003A1">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:26:23 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="39BE1928-F03B-A99B-BCF9-A49BCD0C6DA6">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:26:49 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="apellido" id="B9E9B4E6-4660-1351-280B-34E65A05CC73">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:27:38 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nacimiento" id="BAD59619-9080-E34D-6569-0E463A7D7C65">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:27:55 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="correo" id="A59F3FCE-8B26-7141-B761-7AD684955300">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:28:17 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefono" id="9F13D7F5-1320-7E90-C3D1-6F7449789D6C">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:28:47 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="direccion" id="B3871FD7-DBB2-A934-D255-8F92E2EF4F07">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:29:11 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="dpi" id="115D0CFF-44E5-273A-5722-674E83A566F7">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:29:28 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id" id="07C6C843-E7DF-9EA6-4340-BC61280514EF">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:48:48 UTC</createdTime>
+<generatorID>7BF1F1FD-E65E-D267-11E9-58D4F476D48D</generatorID>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<referedAttribute>F99DAD60-9ECE-1580-67CB-D11D89011F76</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="creditos" id="B93A21A1-A8B5-CFA5-F6C8-EF1F62C89196">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-22 16:42:36 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fecha" id="D80E1A05-BF20-FDDB-EE03-163F1915DDB4">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-22 16:42:49 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A4CBE015-1D8F-CBFD-F159-94EA798FCD1A" name="Estudiante PK">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:26:42 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>BFFA323F-88CB-3926-A558-06F8A6D003A1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="323A0B13-967C-67F5-AD50-BD5F1F16F3B6" name="CursoHabilitado">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:52:38 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="1A7C5500-E257-C194-1DA9-BB2EFDB663B9">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:52:58 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigo" id="03A4EE06-DF92-3560-67D7-406578493FB2">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 02:06:36 UTC</createdTime>
+<generatorID>78BF4ADB-9362-E68F-06C4-22B927AC46DD</generatorID>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<referedAttribute>01DD5047-FC5D-628D-92C0-DE03763EA35A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ciclo" id="0691C09D-6F89-E9CA-95C0-26980FEED158">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:54:55 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="siif" id="72C9BAFD-4D23-833B-412B-7B786C427129">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 02:07:02 UTC</createdTime>
+<generatorID>F385C4F1-88BA-AB77-E243-5ABE976AEA97</generatorID>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<referedAttribute>7A017CF4-39A4-80D7-7EF3-965ECCB8DED3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cupo_max" id="247283C1-DE77-2113-A6E9-C48973D0DCD2">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 02:01:46 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="seccion" id="A6FC5586-EC6D-7D01-C778-D155E5CFDEEC">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 02:02:23 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="anio" id="42750750-0E91-FB5E-946E-FA339FFB7969">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-22 17:06:45 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="asignados" id="4D054560-8FC7-FA50-6F90-7019CB5AEF7A">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-22 17:07:48 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4CEEC067-9147-6F25-7E2B-18BD7BCD4209" name="CursoHabilitado PK">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 01:54:54 UTC</createdTime>
+<ownerDesignName>proyecto2</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="9EA8D9EA-72B6-0C60-61DC-99FEADA4549C" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1A7C5500-E257-C194-1DA9-BB2EFDB663B9</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

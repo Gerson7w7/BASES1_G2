@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5760E53E-E12B-131E-EE11-11BED3F04CF3" name="Nota">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 02:18:35 UTC</createdTime>
+<generatorID>087AE8AB-EB39-4FAB-4A26-30150440AE8F</generatorID>
+<ownerDesignName>proyecto2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="nota" id="328C30ED-45CC-0317-8339-F7531673F328">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 02:18:35 UTC</createdTime>
+<generatorID>D9701F81-ADE5-2CBA-47EA-D672483E8EC4</generatorID>
+<ownerDesignName>proyecto2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CursoHabilitado_id" id="A87E705F-ED1F-999B-DF88-EB0FD1714AE4">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 02:18:35 UTC</createdTime>
+<generatorID>B838F41C-8F88-D14F-5010-13478CEFD7CF</generatorID>
+<ownerDesignName>proyecto2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="927B1C9B-B62E-54AC-89B2-476E950AD43E" referredColumn="2E0CD39F-E532-03AE-96A1-980947B57A7A"/>
+</associations>
+</Column>
+<Column name="Estudiante_carnet" id="6ABBF2B3-1732-B314-521C-5E1C80C46CCA">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 02:18:35 UTC</createdTime>
+<generatorID>C4DC413C-6EED-EC81-9F2F-985498356740</generatorID>
+<ownerDesignName>proyecto2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C8C621F5-668D-22E0-30EC-6698E7320B48" referredColumn="A1FD7664-9B9A-070A-3423-3173C9A1C3BE"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="87A039E7-BEB0-00DA-1E31-AE8706D3DD8A" name="Nota_CursoHabilitado_FK">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 02:18:35 UTC</createdTime>
+<generatorID>0C3E7BAF-4FB8-8F7C-B199-AA1C5EEE754D</generatorID>
+<ownerDesignName>proyecto2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A87E705F-ED1F-999B-DF88-EB0FD1714AE4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="43A84CC6-C915-D7C5-A430-AE7B056FDA00" name="Nota_Estudiante_FK">
+<createdBy>gerso</createdBy>
+<createdTime>2023-06-21 02:18:35 UTC</createdTime>
+<generatorID>F752A34A-7332-5363-49F3-31BCC9C16430</generatorID>
+<ownerDesignName>proyecto2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6ABBF2B3-1732-B314-521C-5E1C80C46CCA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
