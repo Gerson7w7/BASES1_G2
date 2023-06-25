@@ -5,9 +5,9 @@ CREATE PROCEDURE RegistrarDocente(
 	IN apellido_in VARCHAR2(50)
 	IN nacimiento_in DATE
 	IN correo_in VARCHAR2(100)
-	IN telefono_in INTEGER
+	IN telefono_in NUMBER(8)
 	IN direccion_in VARCHAR2(100)
-	IN dpi_in BIGINT
+	IN dpi_in NUMBER(13)
 	IN siif_in INTEGER
 ) 
 add_docente:BEGIN -- para salir del procedimiento

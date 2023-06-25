@@ -6,9 +6,9 @@ CREATE PROCEDURE RegistrarEstudiante(
 	IN apellido_in VARCHAR2(50)
 	IN nacimiento_in DATE
 	IN correo_in VARCHAR2(100)
-	IN telefono_in INTEGER
+	IN telefono_in NUMBER(8)
 	IN direccion_in VARCHAR2(100)
-	IN dpi_in BIGINT
+	IN dpi_in NUMBER(8)
 	IN carrera_in INTEGER
 ) 
 add_estudiante:BEGIN -- para salir del procedimiento
