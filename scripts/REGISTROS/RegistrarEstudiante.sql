@@ -1,69 +1,73 @@
 -- ===================== registrar estudiante =======================
-DELIMITER $$
-CREATE PROCEDURE RegistrarEstudiante(
-	IN carnet_in INTEGER
-	IN nombre_in VARCHAR2(50)
-	IN apellido_in VARCHAR2(50)
-	IN nacimiento_in DATE
-	IN correo_in VARCHAR2(100)
-	IN telefono_in NUMBER(8)
-	IN direccion_in VARCHAR2(100)
-	IN dpi_in NUMBER(8)
-	IN carrera_in INTEGER
-) 
-add_estudiante:BEGIN -- para salir del procedimiento
+CREATE OR REPLACE PROCEDURE RegistrarEstudiante(
+	carnet_in IN INTEGER,
+	nombre_in IN VARCHAR2,
+	apellido_in IN VARCHAR2,
+	nacimiento_in IN VARCHAR2,
+	correo_in IN VARCHAR2,
+	telefono_in IN NUMBER,
+	direccion_in IN VARCHAR2,
+	dpi_in IN NUMBER,
+	carrera_in IN INTEGER
+) IS
+BEGIN 
 
 -- verificamos si ya existe
-IF (ExisteEstudiante(carnet_in)) THEN
-	SELECT 'EL ESTUDIANTE YA HA SIDO ASIGNADO' AS ERROR;
-	LEAVE add_estudiante;
+IF (ExisteEstudiante(carnet_in) = 1) THEN
+	DBMS_OUTPUT.PUT_LINE('EL ESTUDIANTE YA HA SIDO ASIGNADO');
+	RETURN;
 END IF;
 
 -- verificamos que sus nombres y apellidos solo contengan letras
-IF (NOT NombreCorrecto(nombre_in)) THEN
-	SELECT 'EL NOMBRE NO PUEDE LLEVAR NUMEROS O SIGNOS' AS ERROR;
-	LEAVE add_estudiante;
+IF (NombreCorrecto(nombre_in) = 0) THEN
+	DBMS_OUTPUT.PUT_LINE('EL NOMBRE NO PUEDE LLEVAR NUMEROS O SIGNOS');
+	RETURN;
 END IF;
 
-IF (NOT NombreCorrecto(apellido_in)) THEN
-	SELECT 'EL APELLIDO NO PUEDE LLEVAR NUMEROS O SIGNOS' AS ERROR;
-	LEAVE add_estudiante;
+IF (NombreCorrecto(apellido_in) = 0) THEN
+	DBMS_OUTPUT.PUT_LINE('EL APELLIDO NO PUEDE LLEVAR NUMEROS O SIGNOS');
+	RETURN;
 END IF;
 
 -- verificamos que sea una fecha valida
-IF (NOT FechaCorrecta(nacimiento_in)) THEN
-	SELECT 'LA FECHA DE NACIMIENTO PROPORCIONADA NO ES VALIDA' AS ERROR;
-	LEAVE add_estudiante;
+IF (FechaCorrecta(nacimiento_in) = 0) THEN
+	DBMS_OUTPUT.PUT_LINE('LA FECHA DE NACIMIENTO PROPORCIONADA NO ES VALIDA');
+	RETURN;
 END IF;
 
 -- verificamos si es un correo valido
-IF (NOT CorreoValido(correo_in)) THEN
-	SELECT 'CORREO NO VALIDO' AS ERROR;
-	LEAVE add_estudiante;
+IF (CorreoValido(correo_in) = 0) THEN
+	DBMS_OUTPUT.PUT_LINE('CORREO NO VALIDO');
+	RETURN;
 END IF;
 
 -- verificamos si es un telefono valido
-IF (NOT TelefonoValido(telefono_in)) THEN
-	SELECT 'TELEFONO NO VALIDO' AS ERROR;
-	LEAVE add_estudiante;
+IF (TelefonoValido(telefono_in) = 0) THEN
+	DBMS_OUTPUT.PUT_LINE('TELEFONO NO VALIDO');
+	RETURN;
 END IF;
 
 -- verificamos si es un dpi valido
-IF (NOT DpiValido(dpi_in)) THEN
-	SELECT 'DPI NO VALIDO' AS ERROR;
-	LEAVE add_estudiante;
+IF (DpiValido(dpi_in) = 0) THEN
+	DBMS_OUTPUT.PUT_LINE('DPI NO VALIDO');
+	RETURN;
 END IF;
 
 -- verificamos si existe la carrera
-IF (NOT ExisteCarrera(carrera_in)) THEN
-	SELECT 'LA CARRERA SELECCIONADA NO EXISTE' AS ERROR;
-	LEAVE add_estudiante;
+IF (ExisteCarrera(carrera_in) = 0) THEN
+	DBMS_OUTPUT.PUT_LINE('LA CARRERA SELECCIONADA NO EXISTE');
+	RETURN;
 END IF;
 
 -- si se cumple todas las validaciones procedemos a insertar el estudiante
-INSERT INTO estudiante(carnet, nombre, apellido, nacimiento, correo, telefono, direccion, dpi, carrera_id, creditos, fecha)
-	VALUES (carnet_in, nombre_in, apellido_in, nacimiento_in, correo_in, telefono_in, direccion_in, dpi_in, carrera_in, 0, SYSDATE);
+-- INSERT INTO estudiante(carnet, nombre, apellido, nacimiento, correo, telefono, direccion, dpi, carrera_id, creditos, fecha)
+-- 	VALUES (carnet_in, nombre_in, apellido_in, nacimiento_in, correo_in, telefono_in, direccion_in, dpi_in, carrera_in, 0, SYSDATE);
 	
 -- mensaje de exito 
-SELECT CONCAT('El estudiante ', nombre_in, ' ', apellido_in, 'ha sido asignado exitosamente.') AS MENSAJE;
-END $$ 
+DBMS_OUTPUT.PUT_LINE('El alumno ' || nombre_in || ' ' || apellido_in || ' ha sido asignado exitosamente.');
+END;
+
+-- =========== PRUEBA
+-- BEGIN
+-- RegistrarEstudiante(202000166, 'Gerson', 'Quiroa', '18-10-2000', 'juan@example.com', 12345678, 'Dirección. 3-45 Zona 2 de Mixco', 1234567890125, 2);
+-- END;

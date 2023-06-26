@@ -78,10 +78,13 @@ CREATE TABLE horario (
 );
 
 CREATE TABLE nota (
+	id 				   INTEGER NOT NULL,
     nota               INTEGER NOT NULL,
     cursohabilitado_id INTEGER NOT NULL,
     estudiante_carnet  INTEGER NOT NULL
 );
+
+ALTER TABLE nota ADD CONSTRAINT nota_pk PRIMARY KEY ( id );
 
 ALTER TABLE asignacioncurso
     ADD CONSTRAINT asigcurso_cursohabil_fk FOREIGN KEY ( cursohabilitado_id )
@@ -118,3 +121,25 @@ ALTER TABLE nota
 ALTER TABLE nota
     ADD CONSTRAINT nota_estudiante_fk FOREIGN KEY ( estudiante_carnet )
         REFERENCES estudiante ( carnet );
+
+--SELECT * FROM asignacioncurso;
+--SELECT * FROM carrera;
+--SELECT * FROM curso;
+--SELECT * FROM cursohabilitado;
+--SELECT * FROM docente;
+--SELECT * FROM estudiante;
+--SELECT * FROM horario;
+--SELECT * FROM nota;
+
+--DROP TABLE asignacioncurso;
+--DROP TABLE carrera;
+--DROP TABLE curso;
+--DROP TABLE cursohabilitado;
+--DROP TABLE docente;
+--DROP TABLE estudiante;
+--DROP TABLE horario;
+--DROP TABLE nota;
+
+
+
+        
