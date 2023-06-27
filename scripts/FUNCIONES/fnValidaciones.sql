@@ -128,4 +128,99 @@ BEGIN
 
 END;
 
+-- ========== CICLO VALIDO ========================
+CREATE OR REPLACE FUNCTION CicloValido (
+    p_ciclo IN VARCHAR2
+)
+RETURN NUMBER IS 
+    es_valido NUMBER(1);
+BEGIN
+
+    -- declaración de variables
+    es_valido := 0; 
+    -- regex para validar la cadena
+    IF p_ciclo = '1S' OR p_ciclo = '2S' OR p_ciclo = 'VJ' OR p_ciclo = 'VD' THEN
+        es_valido := 1;
+    END IF;
+    -- retorno de la función
+    RETURN es_valido;
+
+END;
+
+-- ========== SECCION VALIDO ========================
+CREATE OR REPLACE FUNCTION SeccionValida (
+    seccion IN VARCHAR2 
+)
+RETURN NUMBER IS
+    es_valido NUMBER(1);
+BEGIN
+
+    -- declaración de variables
+    es_valido := 0; 
+    -- regex para validar la cadena
+    IF REGEXP_LIKE(nombre, '^[A-Z]$') THEN
+        es_valido := 1;
+    END IF;
+    -- retorno de la función
+    RETURN es_valido;
+
+END;
+
+-- ========== DIA VALIDO ========================
+CREATE OR REPLACE FUNCTION DiaValido (
+    dia IN NUMBER 
+)
+RETURN NUMBER IS
+    es_valido NUMBER(1);
+BEGIN
+
+    -- declaración de variables
+    es_valido := 0; 
+    -- regex para validar la cadena
+    IF dia >= 1 AND dia <= 7 THEN
+        es_valido := 1;
+    END IF;
+    -- retorno de la función
+    RETURN es_valido;
+
+END;
+
+-- ========== HORARIO VALIDO ========================
+CREATE OR REPLACE FUNCTION HorarioValido (
+    horario IN VARCHAR2 
+)
+RETURN NUMBER IS
+    es_valido NUMBER(1);
+BEGIN
+
+    -- declaración de variables
+    es_valido := 0; 
+    -- regex para validar la cadena
+    IF REGEXP_LIKE(horario, '^[0-9]{1,2}:[0-9]{2}-[0-9]{1,2}:[0-9]{2}$') THEN
+        es_valido := 1;
+    END IF;
+    -- retorno de la función
+    RETURN es_valido;
+
+END;
+
+-- ========== NOTA VALIDO ========================
+CREATE OR REPLACE FUNCTION NotaValida (
+    nota IN NUMBER 
+)
+RETURN NUMBER IS
+    es_valido NUMBER(1);
+BEGIN
+
+    -- declaración de variables
+    es_valido := 0; 
+    -- regex para validar la cadena
+    IF nota >= 0 AND nota <= 100 THEN
+        es_valido := 1;
+    END IF;
+    -- retorno de la función
+    RETURN es_valido;
+
+END;
+
 -- llamada a función: SELECT funcion('aa') FROM DUAL;

@@ -86,4 +86,26 @@ EXCEPTION
 
 END;
 
+-- ========== EXISTE CURSO HABILITADO ========================
+CREATE OR REPLACE FUNCTION ExisteCursoHab (
+    p_curso_hab IN INTEGER 
+)
+RETURN NUMBER IS 
+    existe NUMBER(1) := 0; -- Declaración de la variable
+BEGIN
+
+    -- consulta para verificar la existencia del docente
+    SELECT 'X'
+    INTO existe
+    FROM dual
+    WHERE EXISTS (SELECT 1 FROM cursohabilitado ch WHERE ch.id = p_curso_hab);
+    -- retorno de la función
+    RETURN existe;
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN -- Manejo de excepción si no se encuentra ningún docente
+        RETURN 0;
+
+END;
+
 -- llamada a función: SELECT funcion('aa') FROM DUAL;

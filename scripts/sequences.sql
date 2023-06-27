@@ -13,5 +13,10 @@ CREATE SEQUENCE CursoHabSeq
 CREATE SEQUENCE HorarioSeq
     START WITH 1
     INCREMENT BY 1;
+
+-- auto increment para notas
+CREATE SEQUENCE NotaSeq
+    START WITH 1
+    INCREMENT BY 1;
     
 -- cuando se inserta un valor auto incremental sería: name_of_sequence.nextval
