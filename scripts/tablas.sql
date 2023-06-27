@@ -140,6 +140,11 @@ ALTER TABLE nota
 --DROP TABLE horario;
 --DROP TABLE nota;
 
-
-
-        
+--DELETE FROM asignacioncurso;
+--DELETE FROM carrera;
+--DELETE FROM curso;
+--DELETE FROM cursohabilitado;
+--DELETE FROM docente;
+--DELETE FROM estudiante;
+--DELETE FROM horario;
+--DELETE FROM nota;

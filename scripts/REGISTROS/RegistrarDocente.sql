@@ -54,7 +54,7 @@ BEGIN
 
 	-- si se cumple todas las validaciones procedemos a insertar el docente
 	INSERT INTO docente(nombre, apellido, nacimiento, correo, telefono, direccion, dpi, siif, fecha)
-		VALUES (nombre_in, apellido_in, nacimiento_in, correo_in, telefono_in, direccion_in, dpi_in, siif_in, SYSDATE);
+		VALUES (nombre_in, apellido_in, TO_DATE(nacimiento_in, 'DD-MM-YYYY'), correo_in, telefono_in, direccion_in, dpi_in, siif_in, SYSDATE);
 		
 	-- mensaje de exito 
 	DBMS_OUTPUT.PUT_LINE('El docente ' || nombre_in || ' ' || apellido_in || ' ha sido registrado exitosamente.');

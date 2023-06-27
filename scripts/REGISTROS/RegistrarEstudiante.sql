@@ -61,7 +61,7 @@ BEGIN
 
 	-- si se cumple todas las validaciones procedemos a insertar el estudiante
 	INSERT INTO estudiante(carnet, nombre, apellido, nacimiento, correo, telefono, direccion, dpi, carrera_id, creditos, fecha)
-		VALUES (carnet_in, nombre_in, apellido_in, nacimiento_in, correo_in, telefono_in, direccion_in, dpi_in, carrera_in, 0, SYSDATE);
+		VALUES (carnet_in, nombre_in, apellido_in, TO_DATE(nacimiento_in, 'DD-MM-YYYY'), correo_in, telefono_in, direccion_in, dpi_in, carrera_in, 0, SYSDATE);
 		
 	-- mensaje de exito 
 	DBMS_OUTPUT.PUT_LINE('El alumno ' || nombre_in || ' ' || apellido_in || ' ha sido asignado exitosamente.');

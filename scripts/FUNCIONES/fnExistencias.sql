@@ -95,7 +95,7 @@ RETURN NUMBER IS
 BEGIN
 
     -- consulta para verificar la existencia del docente
-    SELECT 'X'
+    SELECT 1
     INTO existe
     FROM dual
     WHERE EXISTS (SELECT 1 FROM cursohabilitado ch WHERE ch.id = p_curso_hab);
