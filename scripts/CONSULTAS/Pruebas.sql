@@ -1,0 +1,18 @@
+BEGIN
+	CONSULTARESTUDIENTESDESASIGNADOS(512, '2S', 2023, 'P');
+END;
+--BEGIN
+	--CONSULTARESTUDIENTESAPROBADOS(512, '2S', 2023, 'P');
+--END;
+--BEGIN
+	--CONSULTARESTUDIENTESASIGNADOS(512, '2S', 2023, 'P');
+--END;
+--BEGIN
+	--consultardocente(12);
+--END;
+--BEGIN
+	--consultarestudiante(201003926);
+--END;
+--BEGIN
+	--consultarpensum(1);
+--END;

@@ -1,38 +1,44 @@
--- ===================== consultar pensum =======================
--- 1. Consultar pensum
--- Debe retornar un listado de todos los cursos pertenecientes a una carrera
--- (incluir los de área común y área profesional).
-CREATE OR REPLACE PROCEDURE ConsultarPensum(
-	carrera_in IN NUMBER
-) IS
-  CURSOR cursos_cur IS
-    SELECT c.codigo, c.nombre, c.es_obligatorio, c.crd_necesarios, c.crd_otorgados
-    FROM curso c 
-    INNER JOIN carrera cr ON c.carrera_id = cr.id
-    WHERE cr.id = carrera_in;
-  curso_rec cursos_cur%ROWTYPE;
-BEGIN 
-
-    -- verificamos si existe la carrera
-    IF (ExisteCarrera(carrera_in) = 0) THEN
-        DBMS_OUTPUT.PUT_LINE('EL CURSO SELECCIONADO NO ESTÁ HABILITADO');
+CREATE OR REPLACE PROCEDURE consultarpensum (codigo_carrera IN NUMBER) AS
+  -- Declarar variables para almacenar los resultados
+  v_codigo NUMBER;
+  v_nombre VARCHAR2(100);
+  v_crd_necesarios NUMBER;
+  v_crd_otorgados NUMBER;
+  v_es_obligatorio NUMBER;
+BEGIN
+-- verificamos si existe la carrera
+    IF (ExisteCarrera(codigo_carrera) = 0) THEN
+        DBMS_OUTPUT.PUT_LINE('No se encontraron cursos para la carrera especificada.');
         RETURN;
     END IF;
+  -- Consultar los cursos para la carrera especificada
+  FOR curso_rec IN (SELECT CODIGO, NOMBRE, CRD_NECESARIOS, CRD_OTORGADOS, ES_OBLIGATORIO
+  FROM curso
+  WHERE CARRERA_ID = codigo_carrera)
 
-    -- si se cumple todas las validaciones procedemos a consultar
-    -- Recorrer los cursos y mostrar los resultados
-    FOR curso_rec IN cursos_cur LOOP
-        DBMS_OUTPUT.PUT_LINE('Código: ' || curso_rec.codigo);
-        DBMS_OUTPUT.PUT_LINE('Nombre: ' || curso_rec.nombre);
-        DBMS_OUTPUT.PUT_LINE('Es obligatorio: ' || curso_rec.es_obligatorio);
-        DBMS_OUTPUT.PUT_LINE('Créditos necesarios: ' || curso_rec.crd_necesarios);
-        DBMS_OUTPUT.PUT_LINE('Créditos otorgados: ' || curso_rec.crd_otorgados);
-        DBMS_OUTPUT.PUT_LINE('------------------------');
-    END LOOP;
+ LOOP
+    -- Recuperar los valores del cursor
+    v_codigo := curso_rec.CODIGO;
+    v_nombre := curso_rec.NOMBRE;
+    v_crd_necesarios := curso_rec.CRD_NECESARIOS;
+    v_crd_otorgados := curso_rec.CRD_OTORGADOS;
+    v_es_obligatorio := curso_rec.ES_OBLIGATORIO;
+   
+  -- Mostrar los resultados
+  DBMS_OUTPUT.PUT_LINE('Código: ' || v_codigo);
+  DBMS_OUTPUT.PUT_LINE('Nombre: ' || v_nombre);
+  DBMS_OUTPUT.PUT_LINE('Créditos necesarios: ' || v_crd_necesarios);
+  DBMS_OUTPUT.PUT_LINE('Créditos otorgados: ' || v_crd_otorgados);
+	IF v_es_obligatorio = 1 THEN
+	  DBMS_OUTPUT.PUT_LINE('Es obligatorio: Sí');
+	ELSE
+	  DBMS_OUTPUT.PUT_LINE('Es obligatorio: No');
+	END IF;
+  DBMS_OUTPUT.PUT_LINE('===============================');
 
+END LOOP;
+EXCEPTION
+  WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('Error dentro del procedimiento, posiblemente por no encontrar datos de la carrera.');
 END;
-
--- =========== PRUEBA
--- BEGIN
--- ConsultarPensum(1);
--- END;
+-- 1. Debe retornar la información de un estudiante según su carnet.
