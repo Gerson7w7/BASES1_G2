@@ -8,10 +8,12 @@ seccion_curso IN VARCHAR2
   v_codigo_curso NUMBER;
   v_cantidad_asignados NUMBER;
   v_cantidad_desasignados NUMBER;
-  v_porcentaje_desasignados NUMBER;
+ v_porcentaje_desasignados NUMBER(5, 2);
   v_total NUMBER;
  v_ciclo_curso VARCHAR2(100);
 BEGIN
+  v_cantidad_desasignados := 0;
+ v_cantidad_asignados := 0;
  -- verificamos si existe la curso
     IF (ExisteCurso(codigo_curso) = 0) THEN
         DBMS_OUTPUT.PUT_LINE('No se encontraron cursos para el código especificado.');
@@ -32,17 +34,20 @@ BEGIN
         RETURN;
     END IF;
   -- Consultar asignaciones y desasignaciones
-  SELECT 
-  C.CODIGO,
-  COUNT(CASE WHEN A.ESTA_ASIGNADO = 1 THEN 1 END) AS cantidad_asignados,
-  COUNT(CASE WHEN A.ESTA_ASIGNADO = 0 THEN 1 END) AS cantidad_desasignados
-	INTO v_codigo_curso, v_cantidad_asignados, v_cantidad_desasignados
-	FROM CURSOHABILITADO CH
-	JOIN CURSO C ON CH.CURSO_CODIGO = C.CODIGO 
-	JOIN ESTUDIANTE E ON C.CARRERA_ID = E.CARRERA_ID 
-	JOIN ASIGNACIONCURSO A ON CH.ID = A.CURSOHABILITADO_ID 
-	WHERE CH.CICLO = ciclo_curso AND CH.SECCION = seccion_curso AND CH.ANIO = anio_curso
-	GROUP BY C.CODIGO;
+  FOR datos_rec IN ( SELECT CH.CURSO_CODIGO, A.ESTA_ASIGNADO 
+  FROM CURSOHABILITADO CH
+  JOIN ASIGNACIONCURSO A ON CH.ID = A.CURSOHABILITADO_ID 
+  WHERE CH.CICLO = ciclo_curso AND CH.SECCION = seccion_curso AND CH.ANIO = anio_curso AND CH.CURSO_CODIGO = codigo_curso)
+ LOOP 
+	 v_codigo_curso := datos_rec.CURSO_CODIGO;
+	IF datos_rec.ESTA_ASIGNADO = 0 THEN
+		v_cantidad_desasignados := v_cantidad_desasignados + 1;
+	ELSIF datos_rec.ESTA_ASIGNADO = 1 THEN
+		v_cantidad_asignados := v_cantidad_asignados + 1;
+	END IF;
+
+ 	
+ END LOOP;
  
   v_total := v_cantidad_desasignados + v_cantidad_asignados;
   -- Calcular el porcentaje de desasignados
