@@ -52,7 +52,7 @@ BEGIN
   v_total := v_cantidad_desasignados + v_cantidad_asignados;
   -- Calcular el porcentaje de desasignados
     IF v_cantidad_asignados > 0 THEN
-        v_porcentaje_desasignados := (v_cantidad_desasignados / v_cantidad_asignados) * 100;
+        v_porcentaje_desasignados := (TO_NUMBER(v_cantidad_desasignados) / TO_NUMBER(v_total)) * 100;
     ELSE
         v_porcentaje_desasignados := 0;
     END IF;
@@ -72,8 +72,9 @@ BEGIN
 	END IF;
   DBMS_OUTPUT.PUT_LINE('Ciclo: ' || v_ciclo_curso);
   DBMS_OUTPUT.PUT_LINE('Año: ' || anio_curso);
-  DBMS_OUTPUT.PUT_LINE('Cantidad estudiantes que llevaron el curso: ' || v_total);
+  DBMS_OUTPUT.PUT_LINE('Cantidad estudiantes que llevaron el curso: ' || v_cantidad_asignados);
   DBMS_OUTPUT.PUT_LINE('Cantidad estudiantes que desasignaron: ' || v_cantidad_desasignados);
+  DBMS_OUTPUT.PUT_LINE('Total de estudiantes: ' || v_total);
   DBMS_OUTPUT.PUT_LINE('Porcentaje estudiantes que desasignaron: ' || v_porcentaje_desasignados || '%');
   DBMS_OUTPUT.PUT_LINE('===============================');
  

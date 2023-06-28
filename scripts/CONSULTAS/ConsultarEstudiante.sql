@@ -27,8 +27,7 @@ BEGIN
  
   -- Mostrar los resultados
   DBMS_OUTPUT.PUT_LINE('Carnet: ' || v_carnet);
-  DBMS_OUTPUT.PUT_LINE('Nombre: ' || v_nombre);
-  DBMS_OUTPUT.PUT_LINE('Apellido: ' || v_apellido);
+  DBMS_OUTPUT.PUT_LINE('Nombre completo: ' || v_nombre || ' ' || v_apellido);
   DBMS_OUTPUT.PUT_LINE('Nacimiento: ' || v_nacimiento);
   DBMS_OUTPUT.PUT_LINE('Correo: ' || v_correo);
   DBMS_OUTPUT.PUT_LINE('Telefono: ' || v_telefono);
